@@ -12,10 +12,10 @@ def compute_K_matrix(kernel, X):
     RETURNS:
     - Matrix of size (n,n)
     """
-    return kernel(X.T, X.T)
+    return kernel(X, X)
 
 
-def kernel_ridge_regression(kernel, X, y, reg):
+def kernel_ridge_regression(kernel, X, y, reg, K=None):
     """
     Compute alpha for a ridge regression as explained in course slides p.90-92
 
@@ -29,12 +29,13 @@ def kernel_ridge_regression(kernel, X, y, reg):
     - alpha of size (n,)
     """
     n = X.shape[0]
-    K = compute_K_matrix(kernel, X)
+    if K is None:
+        K = compute_K_matrix(kernel, X)
 
     return np.linalg.inv(K + reg * np.eye(n)) @ y
 
 
-def get_ridge_prediction(kernel, X_train, X_test, alpha):
+def get_ridge_prediction(kernel, X_train, X_test, alpha, K_x=None):
     """
     Get ridge regression prediction
 
@@ -48,6 +49,9 @@ def get_ridge_prediction(kernel, X_train, X_test, alpha):
     RETURNS:
     - (0-1) array of size (m,)
     """
-    K_x = kernel(X_train.T, X_test.T)
+    if K_x is None:
+        K_x = kernel(X_train, X_test)
+
     proba = alpha @ K_x
+
     return (proba >= 1/2).astype(int)
