@@ -11,72 +11,43 @@
 - Dataset 2: `0.570`
 
 ### Ridge regression, spectrum kernel `k=1`, regularization tuned per dataset
-- Dataset 0: ̀`0.507`
-- Dataset 1: ̀`0.645`
-- Dataset 2: ̀`0.55`
+[ 0.49825  0.6175   0.52475]
 
 ### Ridge regression, spectrum kernel `k=2`, regularization tuned per dataset
-- Dataset 0: ̀`0.500`
-- Dataset 1: ̀`0.625`
-- Dataset 2: ̀`0.510`
+[ 0.52575  0.64025  0.5275 ]
 
 ### Ridge regression, spectrum kernel `k=3`, regularization tuned per dataset
-- Dataset 0: ̀`0.66`
-- Dataset 1: ̀`0.75`
-- Dataset 2: ̀`0.62`
-
-![](img/spectrum_k_3.png)
+[ 0.6735   0.75975  0.6135 ]
 
 ### Ridge regression, spectrum kernel `k=4`, regularization tuned per dataset
-- Dataset 0: ̀`0.71`
-- Dataset 1: ̀`0.84`
-- Dataset 2: ̀`0.63`
-
-![](img/spectrum_k_4.png)
+[ 0.726    0.84425  0.63025]
 
 ### Ridge regression, spectrum kernel `k=5`, regularization tuned per dataset
-- Dataset 0: ̀`0.74`
-- Dataset 1: ̀`0.85`
-- Dataset 2: ̀`0.63`
-
-![](img/spectrum_k_5.png)
+[ 0.7225   0.8535   0.63875]
 
 ### Ridge regression, spectrum kernel `k=6`, regularization tuned per dataset
-- Dataset 0: ̀`0.71`
-- Dataset 1: ̀`0.87`
-- Dataset 2: ̀`0.62`
-
-![](img/spectrum_k_6.png)
+[ 0.7145   0.86225  0.62075]
 
 ### Centering and reducing per-dimension variance (spectrum kernel)
 Precisions obtained are bad, between 50% and 60% max.
 
-### Ridge regression, mismatch kernel `k=6`, `m=1`, regularization tuned per dataset
-- Dataset 0: ̀`0.70`
-- Dataset 1: ̀`0.84`
-- Dataset 2: ̀`0.63`
+### Ridge regression, mismatch kernel `k=4`, `m=1`, regularization tuned per dataset
+[ 0.70125  0.84175  0.62875]
 
-![](img/mismatch_k_6_m_1.png)
+### Ridge regression, mismatch kernel `k=5`, `m=1`, regularization tuned per dataset
+[ 0.697    0.8165   0.61475]
+
+### Ridge regression, mismatch kernel `k=6`, `m=1`, regularization tuned per dataset
+[ 0.703  0.817  0.63 ]
 
 ### Ridge regression, mismatch kernel `k=6`, `m=2`, regularization tuned per dataset
-- Dataset 0: ̀`0.67`
-- Dataset 1: ̀`0.77`
-- Dataset 2: ̀`0.58`
+[ 0.5035   0.5035   0.59475]
 
-Note: much higher regularization (~10^5)
+### Ridge regression, "exp-mismatch" kernel `k=4`, `lambda=0.4`, regularization tuned per dataset
+[ 0.7255   0.852    0.63025]
 
-### Ridge regression, "exp-mismatch" kernel `k=6`, `lambda=0.5`, regularization tuned per dataset
-- Dataset 0: ̀`0.57-0.65`
-- Dataset 1: ̀`0.69-0.71`
-- Dataset 2: ̀`0.55-0.63`
+### Ridge regression, "exp-mismatch" kernel `k=5`, `lambda=0.4`, regularization tuned per dataset
+[ 0.72175  0.867    0.63275]
 
-Note: much higher regularization (~10^5)
-
-![](img/exp_mismatch_lambda_0_5.png)
-
-### Ridge regression, "exp-mismatch" kernel `k=6`, `lambda=0.1`, regularization tuned per dataset
-- Dataset 0: ̀`0.57-0.67`
-- Dataset 1: ̀`0.48`
-- Dataset 2: ̀`0.48`
-
-Note: much higher regularization (~10^5)
+### Ridge regression, "exp-mismatch" kernel `k=6`, `lambda=0.4`, regularization tuned per dataset
+[ 0.739    0.86075  0.6475 ]

@@ -1,9 +1,33 @@
 import numpy as np
+import pandas as pd
 
 
 TRAIN_RATIO = 0.6
 TEST_RATIO = 0.2
 VALID_RATIO = 0.2
+
+def load_data():
+    """
+    Return the sequences, labels and (n,50) datasets for train and test, for the 3 datasets
+    """
+    data = {}
+    for index in range(3):
+        X_train = pd.read_csv('Xtr%s_mat50.csv' % index, delimiter=' ', names=range(0,50)).values
+        seq_train = pd.read_csv('Xtr%s.csv' % index, names='1').values
+        X_test = pd.read_csv('Xte%s_mat50.csv' % index, delimiter=' ', names=range(0,50)).values
+        seq_test = pd.read_csv('Xte%s.csv' % index, names='1').values
+        labels = pd.read_csv('Ytr%s.csv' % index, names=('Id', 'Bound'), skiprows=[0], delimiter=',')
+
+        data[index] = {
+            'seq_train': seq_train,
+            'X_train': X_train,
+            'y_train': labels['Bound'].values,
+            'seq_test': seq_test,
+            'X_test': X_test,
+            'ids': labels['Id'].values,
+        }
+
+    return data
 
 
 def split_train_test_valid(X, y):
